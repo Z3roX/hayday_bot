@@ -1,0 +1,14 @@
+version: '3'
+services:
+  android-emulator:
+    build: .
+    ports:
+      - "5555:5555"
+      - "5900:5900"
+    environment:
+      - DEVICE="Google Pixel 4"
+      - ANDROID_VERSION=10.0
+  bot:
+    build: ./bot
+    depends_on:
+      - android-emulator
