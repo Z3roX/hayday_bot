@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
     libssl-dev
 
 # Kopiere die notwendigen Dateien
-COPY bot.py /bot.py
+COPY /bot/bot.py /bot.py
 COPY app.py /app.py
 COPY .env /app/.env
 
