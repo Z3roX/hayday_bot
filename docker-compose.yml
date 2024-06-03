@@ -3,12 +3,11 @@ services:
   android-emulator:
     build: .
     ports:
+      - "5554:5554"
       - "5555:5555"
       - "5900:5900"
+      - "6080:6080"
+    volumes:
+      - ./sdk:/opt/android-sdk-linux
     environment:
-      - DEVICE="Google Pixel 4"
-      - ANDROID_VERSION=10.0
-  bot:
-    build: ./bot
-    depends_on:
-      - android-emulator
+      - ANDROID_HOME=/opt/android-sdk-linux
